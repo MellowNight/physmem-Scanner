@@ -20,13 +20,23 @@ using namespace std;
 
 struct INPUT_STRUCT
 {
-    BYTE        serialNumber[50];
+    BYTE        serialNumber[60];
     int         serialLength;
     bool        wide;
+    BYTE        spoofString[60];
 };
 
 namespace Globals
 {
     char        signatureGuard[] = "pvgq";
     HANDLE		driverHandle;
+    int         sizeLimit = 14;
 }
+
+
+
+const char alphanum[] ="01289OPQRSTUVWXYZabcdefghijklmnABCDEFGHIJKLMNopgrstu34567vwxyz";
+
+const char DiskChars[] = "345QRSTUV6789ABCDEFGHIJKLMNOP012WXYZ";
+
+const char GPUchars[] = "06789abcd12345ef";

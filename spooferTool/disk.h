@@ -2,6 +2,33 @@
 #include "utils.h"
 
 
+
+string randomDisk(int length)
+{
+	Sleep(1000);
+
+
+	time_t seconds;
+
+	seconds = time(NULL);
+
+	srand(seconds);
+
+	string    String;
+
+	for (int i = 0; i < length; ++i)
+	{
+		int seed = rand();
+
+		String += (DiskChars[seed % (sizeof(DiskChars) - 1)]);
+	}
+
+	return String;
+}
+
+
+
+
 vector<string>	getdiskSerials()
 {
 	vector<string>		serialNumbers;
@@ -29,7 +56,7 @@ vector<string>	getdiskSerials()
 	fclose(fp);
 	remove("diskSerial.txt");
 
-
+	serialNumberW.pop_back();
 
 	string	defaultString = "Default string";
 
@@ -37,7 +64,7 @@ vector<string>	getdiskSerials()
 	{
 		string	seriall = Utils::ws2s(serialNumberW[i]);	/*	format the strings	*/
 
-		seriall = Utils::rtrim(seriall);
+		seriall = seriall.substr(0, Globals::sizeLimit);
 
 		if (seriall.compare(defaultString) != 0)
 		{
@@ -58,8 +85,9 @@ vector<string>	getdiskSerials()
 
 void	spoofDisk()
 {
-	INPUT_STRUCT	input;
+	INPUT_STRUCT		input;
 
+	DWORD				bytesReturn;
 
 	vector<string>		serialNumbers = getdiskSerials();
 
@@ -68,21 +96,27 @@ void	spoofDisk()
 	for (int i = 0; i < serialNumbers.size(); ++i)
 	{
 
-		/*	phase 1:	normal scan		*/
-
 		cout << serialNumbers[i] << endl;
 
-		int		length = serialNumbers[i].size();		
+		int		length = serialNumbers[i].size();
+
+		string	spoofString = randomDisk(length);
+
+
+
+
+		/*	phase 1:	normal scan		*/
+
 
 		serialNumbers[i] += Globals::signatureGuard;
 
 		strcpy((char*)input.serialNumber, serialNumbers[i].c_str());
 
-
 		input.serialLength = length;
+
 		input.wide = false;
 
-		DWORD	bytesReturn;
+		RtlCopyMemory(input.spoofString, spoofString.c_str(), length);
 
 
 		BOOL	status = DeviceIoControl(Globals::driverHandle, SCAN_PHYSICAL_MEMORY, &input,
@@ -94,21 +128,31 @@ void	spoofDisk()
 		/*	phase 2:	IOCTL_ATA_PASS_THROUGH - some hdd serials are encoded in strange ways  		*/
 
 		char	 serialNum2[30];
+		char	 spoofString2[30];
+
 
 		Utils::SwapEndianess(serialNum2, (PCHAR)serialNumbers[i].c_str());
+		Utils::SwapEndianess(spoofString2, (PCHAR)spoofString.c_str());
+
 
 		RtlCopyMemory(input.serialNumber, serialNum2, length);
-
 		RtlCopyMemory((input.serialNumber + length), Globals::signatureGuard, 5);
+		
+
+		RtlCopyMemory(input.spoofString, spoofString2, length);
 
 		status = DeviceIoControl(Globals::driverHandle, SCAN_PHYSICAL_MEMORY, &input,
 			sizeof(INPUT_STRUCT), 0, 0, &bytesReturn, 0);
+
+
 
 		
 
 		/*	phase 3:	scan for wide char serials	*/
 
-		wstring		wideSerial	= Utils::s2ws(serialNumbers[i]);
+		wstring		wideSerial	= Utils::s2ws(serialNumbers[i].substr(0, Globals::sizeLimit));
+		wstring		wideSpoofString = Utils::s2ws(spoofString);
+
 
 		length = wideSerial.size() * sizeof(wchar_t);
 
@@ -120,9 +164,15 @@ void	spoofDisk()
 		wideSerial += signatureGuard;
 
 
+
 		input.wide = true;
 
-		RtlCopyMemory(input.serialNumber, wideSerial.c_str(), length);
+		wcscpy((wchar_t*)input.serialNumber, wideSerial.c_str());
+		wcscpy((wchar_t*)input.spoofString, wideSpoofString.c_str());
+
+
+		status = DeviceIoControl(Globals::driverHandle, SCAN_PHYSICAL_MEMORY, &input,
+			sizeof(INPUT_STRUCT), 0, 0, &bytesReturn, 0);
 
 		if (status == FALSE)
 		{

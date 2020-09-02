@@ -4,12 +4,7 @@
 #define    SCAN_PHYSICAL_MEMORY  	CTL_CODE(FILE_DEVICE_UNKNOWN, 0X801, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 
-struct INPUT_STRUCT
-{
-    BYTE        serialNumber[50];
-    int         serialLength;
-    bool        wide;
-};
+
 
 
 UNICODE_STRING      symLink;
@@ -58,31 +53,31 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
 
     if (systemBuffer->wide == true)
     {
-        DbgPrint("wide char pattern \n");
-
-        DbgPrint("our pattern is %wZ \n", systemBuffer->serialNumber);
+        DbgPrint("wide char: our pattern is %wZ \n", systemBuffer->serialNumber);
     }
     else
     {
-        DbgPrint("our pattern is %s \n", systemBuffer->serialNumber);
+        DbgPrint("normal: our pattern is %s \n", systemBuffer->serialNumber);
     }
 
     DbgPrint("our pattern length is %i \n", systemBuffer->serialLength);
+
+
+    memcpy(Globals::spoofString, systemBuffer->spoofString, systemBuffer->serialLength);
+
 
 
     switch (currentStackLocation->Parameters.DeviceIoControl.IoControlCode)
     {
     case    SCAN_PHYSICAL_MEMORY:
     {
-        SCAN_CONTEXT    context;
+        Globals::processID = Utils::GetProcessPID(L"notepad.exe");
 
-        context.threadNumber = 0;
-        context.length = 16;
-        context.pattern = systemBuffer->serialNumber;
-        context.pml4Low = 0;
-        context.pml4High = 512;
+        PsLookupProcessByProcessId(Globals::processID, &Globals::targetProcess);
 
-        Memory::scanPhysicalMemory(&context);
+        DbgPrint("process id of notepad.exe: %i \n", Globals::processID);
+
+        Memory::scanPhysicalMemory(systemBuffer);
 
 
         break;

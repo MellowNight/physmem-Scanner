@@ -2,12 +2,6 @@
 #include "gpu.h"
 #include "smbios.h"
 
-/*
-	IMPORTANT: exclude null terminator
-
-*/
-
-
 
 
 int main()

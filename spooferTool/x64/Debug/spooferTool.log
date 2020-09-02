@@ -1,5 +1,6 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(76,5): warning : Access to the path 'c:\users\jguo5\source\repos\physicalmemory\x64\debug\spoofertool.exe' is denied.
-  spooferTool.cpp
-C:\Users\jguo5\source\repos\physicalMemory\spooferTool\disk.h(69,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jguo5\source\repos\physicalMemory\spooferTool\gpu.h(67,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-LINK : fatal error LNK1104: cannot open file 'C:\Users\jguo5\source\repos\physicalMemory\x64\Debug\spooferTool.exe'
+﻿  spooferTool.cpp
+C:\Users\jguo5\source\repos\physicalMemory\spooferTool\disk.h(93,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jguo5\source\repos\physicalMemory\spooferTool\disk.h(149,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jguo5\source\repos\physicalMemory\spooferTool\smbios.h(127,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jguo5\source\repos\physicalMemory\spooferTool\smbios.h(166,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  spooferTool.vcxproj -> C:\Users\jguo5\source\repos\physicalMemory\x64\Debug\spooferTool.exe

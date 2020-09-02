@@ -1,6 +1,33 @@
 #pragma once
 #include "utils.h"
 
+
+string randomGPU()
+{
+
+	string    String = "GPU-";
+
+	for (int i = 0; i < 36; ++i)
+	{
+
+		if ((i != 8) && (i != 13) && (i != 18) && (i != 23))
+		{
+			int seed = rand();
+
+			String += (GPUchars[seed % (sizeof(GPUchars) - 1)]);
+		}
+		else
+		{
+			String += "-";
+		}
+	}
+
+	return String;
+}
+
+
+
+
 vector<string>	getGPUuuid()
 {
 
@@ -30,7 +57,7 @@ vector<string>	getGPUuuid()
 	remove("GPUuuid.txt");
 
 
-
+	serialNumberW.pop_back();
 
 
 	for (int i = 0; i < serialNumberW.size(); ++i)
@@ -38,6 +65,7 @@ vector<string>	getGPUuuid()
 		string		seriall = Utils::ws2s(serialNumberW[i]);			/*	format the strings	*/
 		seriall = Utils::rtrim(seriall);
 
+		seriall = seriall.substr(0, Globals::sizeLimit);
 
 		serialNumbers.push_back(seriall);
 	}
@@ -53,28 +81,32 @@ vector<string>	getGPUuuid()
 
 void	spoofGPU()
 {
-	INPUT_STRUCT	input;
-
+	INPUT_STRUCT		input;
 
 	vector<string>		serialNumbers = getGPUuuid();
+
+	DWORD				bytesReturn;
 
 
 	for (int i = 0; i < serialNumbers.size(); ++i)
 	{
 		cout << serialNumbers[i] << endl;
 
-		int		length = serialNumbers[i].size();
 
+		string		spoofString = randomGPU();
 
-		strcpy((char*)input.serialNumber, serialNumbers[i].c_str());
+		int			length = 16;
 
 
 		input.serialLength = length;
+
+		serialNumbers[i] += Globals::signatureGuard;
+
+		strcpy((char*)input.serialNumber, serialNumbers[i].c_str());
+
 		input.wide = false;
 
-		DWORD	bytesReturn;
-
-		RtlCopyMemory(input.serialNumber + length, Globals::signatureGuard, 5);
+		
 
 
 		BOOL	status = DeviceIoControl(Globals::driverHandle, SCAN_PHYSICAL_MEMORY, &input,
