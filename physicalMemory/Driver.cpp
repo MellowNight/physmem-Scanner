@@ -14,6 +14,7 @@ UNICODE_STRING      symLink;
 
 
 
+
 NTSTATUS     unsupported(PDEVICE_OBJECT device_obj, PIRP irp) {
     UNREFERENCED_PARAMETER(device_obj);
 
@@ -24,12 +25,16 @@ NTSTATUS     unsupported(PDEVICE_OBJECT device_obj, PIRP irp) {
 
 
 
+
+
 NTSTATUS     CreateHandler(PDEVICE_OBJECT device_obj, PIRP irp) {
     UNREFERENCED_PARAMETER(device_obj);
 
     IoCompleteRequest(irp, IO_NO_INCREMENT);
     return irp->IoStatus.Status;
 }
+
+
 
 
 
@@ -45,9 +50,15 @@ NTSTATUS     CloseHandler(PDEVICE_OBJECT device_obj, PIRP irp) {
 
 
 
+
+
+
+
+
 NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
 {
     PIO_STACK_LOCATION		currentStackLocation = IoGetCurrentIrpStackLocation(Irp);
+
     INPUT_STRUCT*           systemBuffer = (INPUT_STRUCT*)Irp->AssociatedIrp.SystemBuffer;
 
 
@@ -91,6 +102,11 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
 
 
 
+
+
+
+
+
 NTSTATUS    driverUnload(PDRIVER_OBJECT pDriverObject)
 {
     DbgPrintEx(0, 0, "Unload routine called.\n");
@@ -101,6 +117,9 @@ NTSTATUS    driverUnload(PDRIVER_OBJECT pDriverObject)
 
     return  STATUS_SUCCESS;
 }
+
+
+
 
 
 

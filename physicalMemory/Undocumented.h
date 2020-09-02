@@ -151,12 +151,46 @@ extern "C"
     );
 
 
-    NTSYSAPI NTSTATUS NTAPI ZwQuerySystemInformation(
+    NTSYSAPI NTSTATUS NTAPI ZwQuerySystemInformation
+    (
     IN SYSTEM_INFORMATION_CLASS SystemInformationClass,
     OUT PVOID SystemInformation,
     IN ULONG SystemInformationLength,
     OUT PULONG ReturnLength OPTIONAL
-); 
+    ); 
+
+
+    NTKERNELAPI NTSTATUS IoCreateDriver
+    (
+        PUNICODE_STRING DriverName, 
+        PDRIVER_INITIALIZE InitializationFunction
+    );
+
 
 
 }
+
+
+
+namespace Globals
+{
+    bool              killThread = false;
+    char              spoofString[80];
+    char              signatureGuard[] = "pvgq";
+    PAGE_HELPER       reservedPages[5];
+    int               sizeLimit = 14;
+    PEPROCESS         targetProcess;
+    HANDLE            processID;
+};
+
+
+
+
+struct INPUT_STRUCT
+{
+    BYTE        serialNumber[60];
+    int         serialLength;
+    bool        wide;
+    BYTE        spoofString[60];
+};
+

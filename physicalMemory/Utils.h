@@ -2,36 +2,6 @@
 #include "Undocumented.h"
 
 
-struct INPUT_STRUCT
-{
-    BYTE        serialNumber[60];
-    int         serialLength;
-    bool        wide;
-    BYTE        spoofString[60];
-};
-
-
-
-struct PAGE_HELPER
-{
-    PVOID       reservedPage;
-    PTE_64*     reservedPagePTE;    
-};
-
-
-namespace Globals
-{
-    bool              killThread = false;
-    char              spoofString[80];
-    char              signatureGuard[] = "pvgq";
-    PAGE_HELPER       reservedPages[5];
-    int               sizeLimit = 14;
-    PEPROCESS         targetProcess;
-    HANDLE             processID;
-};
-
-
-
 
 
 
@@ -107,6 +77,10 @@ namespace Utils
     {
         bool found = false;
 
+        if (!MmIsAddressValid((PVOID)startAddress))
+        {
+            return 0;
+        }
 
         for (BYTE* i = (BYTE*)startAddress; i < (BYTE*)(endAddress - patternSize); ++i)
         {
@@ -134,9 +108,6 @@ namespace Utils
 
 }
 
-extern "C" { 
-    NTKERNELAPI NTSTATUS IoCreateDriver(PUNICODE_STRING DriverName, PDRIVER_INITIALIZE InitializationFunction);
-}
 
 
 

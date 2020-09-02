@@ -14,6 +14,13 @@ enum mapLevel
 
 
 
+struct PAGE_HELPER
+{
+    PVOID       reservedPage;
+    PTE_64*     reservedPagePTE;
+};
+
+
 
 
 
