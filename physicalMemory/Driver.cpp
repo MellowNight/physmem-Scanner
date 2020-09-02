@@ -71,14 +71,8 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
     {
     case    SCAN_PHYSICAL_MEMORY:
     {
-        Globals::processID = Utils::GetProcessPID(L"notepad.exe");
-
-        PsLookupProcessByProcessId(Globals::processID, &Globals::targetProcess);
-
-        DbgPrint("process id of notepad.exe: %i \n", Globals::processID);
 
         Memory::scanPhysicalMemory(systemBuffer);
-
 
         break;
     }
