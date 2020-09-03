@@ -11,7 +11,7 @@
 
 ## current issue:
 
-sometimes
+sometimes it doesn't successfully spoof everything
 
 
 ## NOTE:
