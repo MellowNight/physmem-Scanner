@@ -1,4 +1,4 @@
-# hwid spoofer
+# hwid spoofer/physical memory tool
  scans through memory and places some hooks around to spoof hwids. physicalMemory is kernel mode driver, spooferTool is usermode.
  
  ## how it works:
