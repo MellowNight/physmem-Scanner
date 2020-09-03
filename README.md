@@ -11,8 +11,9 @@
 
 ## current issue:
 
-page fault frequently (working in VM)
+sometimes
 
 
 ## NOTE:
-for s.m.a.r.t serials you NEED to place hooks
+- for s.m.a.r.t serials you NEED to place hooks
+- for GPU uuid you MAY need to place hooks
