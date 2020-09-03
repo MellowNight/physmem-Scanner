@@ -145,6 +145,7 @@ NTSTATUS    Entry(_In_ _DRIVER_OBJECT * DriverObject, _In_ PUNICODE_STRING Regis
 
 
     RtlInitUnicodeString(&symLink, L"\\DosDevices\\xPhymAqg");
+
     IoCreateSymbolicLink(&symLink, &deviceName);
 
 
@@ -155,7 +156,9 @@ NTSTATUS    Entry(_In_ _DRIVER_OBJECT * DriverObject, _In_ PUNICODE_STRING Regis
 
 
     DriverObject->MajorFunction[IRP_MJ_DEVICE_CONTROL] = IOCTLdispatch;
+
     DriverObject->MajorFunction[IRP_MJ_CREATE] = CreateHandler;
+
     DriverObject->MajorFunction[IRP_MJ_CLOSE] = CloseHandler;
 
 
@@ -167,7 +170,9 @@ NTSTATUS    Entry(_In_ _DRIVER_OBJECT * DriverObject, _In_ PUNICODE_STRING Regis
     }
 
 
-    Memory::initializePages();
+
+
+    Globals::pageManager.initializePages();
 
     return     status;
 }

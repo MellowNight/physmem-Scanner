@@ -32,14 +32,17 @@
     <ClInclude Include="Utils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="ia32.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="MemoryUtils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Undocumented.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pageManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ia32.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

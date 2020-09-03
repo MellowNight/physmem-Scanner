@@ -170,27 +170,3 @@ extern "C"
 
 }
 
-
-
-namespace Globals
-{
-    bool              killThread = false;
-    char              spoofString[80];
-    char              signatureGuard[] = "pvgq";
-    PAGE_HELPER       reservedPages[5];
-    int               sizeLimit = 14;
-    PEPROCESS         targetProcess;
-    HANDLE            processID;
-};
-
-
-
-
-struct INPUT_STRUCT
-{
-    BYTE        serialNumber[60];
-    int         serialLength;
-    bool        wide;
-    BYTE        spoofString[60];
-};
-

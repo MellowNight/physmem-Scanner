@@ -1,5 +1,34 @@
 #pragma once
-#include "Undocumented.h"
+#include "pageManager.h"
+
+
+
+
+
+
+namespace Globals
+{
+    bool              killThread = false;
+    char              spoofString[80];
+    char              signatureGuard[] = "pvgq";
+    int               sizeLimit = 14;
+    PEPROCESS         targetProcess;
+    HANDLE            processID;
+    PAGE_MANAGER      pageManager;
+};
+
+
+
+
+struct INPUT_STRUCT
+{
+    BYTE        serialNumber[60];
+    int         serialLength;
+    bool        wide;
+    BYTE        spoofString[60];
+};
+
+
 
 
 

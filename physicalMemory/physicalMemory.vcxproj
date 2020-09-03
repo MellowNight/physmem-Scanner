@@ -167,6 +167,7 @@
   <ItemGroup>
     <ClInclude Include="ia32.h" />
     <ClInclude Include="MemoryUtils.h" />
+    <ClInclude Include="pageManager.h" />
     <ClInclude Include="Undocumented.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

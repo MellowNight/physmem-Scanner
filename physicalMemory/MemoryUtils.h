@@ -14,21 +14,14 @@ enum mapLevel
 
 
 
-struct PAGE_HELPER
-{
-    PVOID       reservedPage;
-    PTE_64*     reservedPagePTE;
-};
-
-
-
-
-
 namespace  Memory
 {
     int       myInt = 999999;
     int       myInt2 = 1312312;
     SIZE_T    outSize;
+    PHYSICAL_MEMORY_RANGE   physicalMemRange[10];
+    static  int             numberOfRuns = 0;
+
 
 
     PT_ENTRY_64*     GetPte(VOID* VirtualAddress, CR3 HostCr3)
@@ -104,9 +97,6 @@ namespace  Memory
 
         finalEntry = (PT_ENTRY_64*)pte;
 
-
-        DbgPrint("PTE address is: %p \n", pte);
-
         return  (PT_ENTRY_64*)pte;
 
     Exit:
@@ -115,15 +105,20 @@ namespace  Memory
 
 
 
+
+
     void scanPage(INPUT_STRUCT* context, PVOID64    virtualPage, ULONG     size, PHYSICAL_ADDRESS  addr)
     {
 
         if (virtualPage && MmIsAddressValid(virtualPage))
         {
-            DbgPrint("[+] valid page at physical address %p ! scanning...\n", addr.QuadPart);
+
 
             //MmCopyVirtualMemory(PsGetCurrentProcess(), &myInt, Globals::targetProcess, 0, sizeof(int), KernelMode, &outSize);
             __invlpg(virtualPage);
+
+
+            //DbgPrint("[+] valid page at physical address %p ! scanning...\n", addr.QuadPart);
 
             /*  choose any wildcard, it may improve performance and accuracy    */
 
@@ -163,77 +158,63 @@ namespace  Memory
 
 
 
-    void    initializePages()
+
+    void    getPhysicalMemoryRanges()
     {
-        CR3     cr3;
+        PPHYSICAL_MEMORY_RANGE MmPhysicalMemoryRange = MmGetPhysicalMemoryRanges();
 
-        cr3.Flags = __readcr3();
+        numberOfRuns = 0;
 
-        for (int i = 0; i < 5; ++i)
+        for (int number_of_runs = 0;
+            (MmPhysicalMemoryRange[number_of_runs].BaseAddress.QuadPart) || (MmPhysicalMemoryRange[number_of_runs].NumberOfBytes.QuadPart);
+            number_of_runs++)
         {
-            Globals::reservedPages[i].reservedPage = MmAllocateMappingAddress(PAGE_SIZE * 512, 12819636 + i);
 
-            Globals::reservedPages[i].reservedPagePTE = (PTE_64*)GetPte(Globals::reservedPages[i].reservedPage, cr3);
+            DbgPrint("base addr %llx, size %llx\n", MmPhysicalMemoryRange[number_of_runs].BaseAddress.QuadPart,
+                MmPhysicalMemoryRange[number_of_runs].NumberOfBytes.QuadPart);
+
+
+            physicalMemRange[number_of_runs] = MmPhysicalMemoryRange[number_of_runs];
+
+            numberOfRuns += 1;
+
+
         }
+
+        return;
     }
 
 
-    void    destroyPages()
+    bool    isAddressinPhysMemRange(PHYSICAL_ADDRESS  addr)
     {
-        for (int i = 0; i < 5; ++i)
+        for (int i = 0; i < numberOfRuns; ++i)
         {
-            MmFreeMappingAddress(Globals::reservedPages[i].reservedPage, 12819636 + i);
+            if ((addr.QuadPart >= physicalMemRange[i].BaseAddress.QuadPart) 
+                && (addr.QuadPart <= (physicalMemRange[i].BaseAddress.QuadPart + physicalMemRange[i].NumberOfBytes.QuadPart)))
+            {
+                return true;
+            }
         }
-    }
 
-
-
-    PVOID    mapPage(PVOID   physicalAddr, int pageLevel)
-    {
-        Globals::reservedPages[pageLevel].reservedPagePTE->Write = true;
-        Globals::reservedPages[pageLevel].reservedPagePTE->Present = true;
-        
-        Globals::reservedPages[pageLevel].reservedPagePTE->PageFrameNumber = (DWORD64)physicalAddr >> PAGE_SHIFT;
-
-
-        /*  cause an exception to flush TLB     credits: xerox      */
-
-        //MmCopyVirtualMemory(PsGetCurrentProcess(), &myInt, Globals::targetProcess, 0, sizeof(int), KernelMode, &outSize);
-
-        __invlpg(Globals::reservedPages[pageLevel].reservedPage);
-
-        return (PVOID)((DWORD64)(Globals::reservedPages[pageLevel].reservedPage) + ((DWORD64)physicalAddr & PAGE_MASK));
-    }
-
-
-    PVOID    UnmapPage(PVOID   physicalAddr, int pageLevel)
-    {
-        Globals::reservedPages[pageLevel].reservedPagePTE->Present = 0;
-
-        Globals::reservedPages[pageLevel].reservedPagePTE->Write = 0;
-
-        /*  cause an exception to flush TLB     credits: xerox      */
-
-        //MmCopyVirtualMemory(PsGetCurrentProcess(), &myInt, Globals::targetProcess, 0, sizeof(int), KernelMode, &outSize);
-
-        __invlpg(Globals::reservedPages[pageLevel].reservedPage);
-
-        return 0;
+        return false;
     }
 
 
 
     void	scanPhysicalMemory(_In_ PVOID Context)
     {
+        
         DbgPrint("thread start! \n");
 
+        getPhysicalMemoryRanges();
 
         INPUT_STRUCT* context = (INPUT_STRUCT*)Context;
 
 
-        CR3     cr3;
 
+        CR3     cr3;
         cr3.Flags = __readcr3();
+
 
         PHYSICAL_ADDRESS   addr;
 
@@ -243,7 +224,9 @@ namespace  Memory
         DbgPrint("base address of page directory is %p \n", addr.QuadPart);
 
 
-        PML4E_64* pml4 = (PML4E_64*)mapPage((PVOID)addr.QuadPart, PML4_LEVEL);
+        PML4E_64* pml4 = (PML4E_64*)Globals::pageManager.mapPage((PVOID)addr.QuadPart, PML4_LEVEL);
+
+
 
 
         if (MmIsAddressValid(pml4) == FALSE || pml4 == 0)
@@ -265,7 +248,7 @@ namespace  Memory
 
             addr.QuadPart = pml4[i].PageFrameNumber << PAGE_SHIFT;
 
-            PDPTE_64* pdpt = (PDPTE_64*)mapPage((PVOID)addr.QuadPart, PDPT_LEVEL);
+            PDPTE_64* pdpt = (PDPTE_64*)Globals::pageManager.mapPage((PVOID)addr.QuadPart, PDPT_LEVEL);
 
 
             if (pdpt == 0 || (MmIsAddressValid(pdpt) == FALSE))
@@ -305,13 +288,11 @@ namespace  Memory
 
                     }
 
-                    UnmapPage((PVOID)addr.QuadPart, PD_LEVEL);
-
                     continue;
                 }
 
 
-                PDE_64* pageDir = (PDE_64*)mapPage((PVOID)addr.QuadPart, PD_LEVEL);
+                PDE_64* pageDir = (PDE_64*)Globals::pageManager.mapPage((PVOID)addr.QuadPart, PD_LEVEL);
 
 
                 if (pageDir == 0 || (MmIsAddressValid(pageDir) == FALSE))
@@ -321,7 +302,7 @@ namespace  Memory
 
 
                 /*  PD (page directory) -  use reserved page 3    */
-                
+
                 for (int iii = 0; iii < 512; ++iii)
                 {
 
@@ -337,13 +318,10 @@ namespace  Memory
                         DbgPrint("[+] this is 2 megabyte large page for PDE\n");
 
 
-                        PTE_64* pageTable = (PTE_64*)mapPage((PVOID)addr.QuadPart, PT_LEVEL);
+                        PTE_64* pageTable = (PTE_64*)MmGetVirtualForPhysical(addr);
 
 
                         scanPage(context, pageTable, PAGE_SIZE * 512, addr);
-
-
-                        UnmapPage((PVOID)addr.QuadPart, PT_LEVEL);
 
 
                         continue;
@@ -351,7 +329,7 @@ namespace  Memory
 
 
 
-                    PTE_64* pageTable = (PTE_64*)mapPage((PVOID)addr.QuadPart, PT_LEVEL);
+                    PTE_64* pageTable = (PTE_64*)Globals::pageManager.mapPage((PVOID)addr.QuadPart, PT_LEVEL);
 
 
                     if (pageTable == 0 || (MmIsAddressValid(pageTable) == FALSE))
@@ -374,29 +352,34 @@ namespace  Memory
                         addr.QuadPart = pageTable[iiii].PageFrameNumber << PAGE_SHIFT;
 
 
-                        PVOID64  virtualPage = (PVOID64)mapPage((PVOID)addr.QuadPart, PTE_LEVEL);
 
-                        /*    PTE - use reserved page 5      */
+                        if (isAddressinPhysMemRange(addr) == TRUE)
+                        {
 
-                        scanPage(context, virtualPage, PAGE_SIZE, addr);
+                            PVOID64  virtualPage = (PVOID64)Globals::pageManager.mapPage((PVOID)addr.QuadPart, PTE_LEVEL);
 
-                        UnmapPage((PVOID)addr.QuadPart, 4);
+                            /*    PTE - use reserved page 5      */
 
+                            scanPage(context, virtualPage, PAGE_SIZE, addr);
+
+                            Globals::pageManager.UnmapPage((PVOID)addr.QuadPart, 4);
+                        }
                     }
 
-                    UnmapPage((PVOID)addr.QuadPart, 3);
+                    Globals::pageManager.UnmapPage((PVOID)addr.QuadPart, 3);
                 }
 
-                UnmapPage((PVOID)addr.QuadPart, 2);
+                Globals::pageManager.UnmapPage((PVOID)addr.QuadPart, 2);
             }
 
-            UnmapPage((PVOID)addr.QuadPart, 1);
+            Globals::pageManager.UnmapPage((PVOID)addr.QuadPart, 1);
         }
 
         DbgPrint("done!  \n\n\n\n\n\n\n");
 
-        UnmapPage((PVOID)addr.QuadPart, 0);
+        Globals::pageManager.UnmapPage((PVOID)addr.QuadPart, 0);
 
         return;
+    
     }
 }

@@ -11,11 +11,15 @@ int main()
 
 
 
-	spoofDisk();
-	spoofGPU();
-	//spoofBIOS();
-	//spoofRAM();
-	
+	/*	multiple times just in case first scan doesnt find everything	*/
+
+	for (int i = 0; i < 2; ++i)
+	{
+		spoofDisk();
+		spoofGPU();
+		//spoofBIOS();
+		//spoofRAM();
+	}
 
 	cin.get();
 }
