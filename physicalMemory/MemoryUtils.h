@@ -355,14 +355,14 @@ namespace  Memory
 
                         if (isAddressinPhysMemRange(addr) == TRUE)
                         {
-
-                            PVOID64  virtualPage = (PVOID64)Globals::pageManager.mapPage((PVOID)addr.QuadPart, PTE_LEVEL);
+                    
+                            PVOID64  virtualPage = (PVOID64)MmMapIoSpace(addr, PAGE_SIZE, MmNonCached);
 
                             /*    PTE - use reserved page 5      */
 
                             scanPage(context, virtualPage, PAGE_SIZE, addr);
 
-                            Globals::pageManager.UnmapPage((PVOID)addr.QuadPart, 4);
+                            MmUnmapIoSpace(virtualPage, PAGE_SIZE);
                         }
                     }
 

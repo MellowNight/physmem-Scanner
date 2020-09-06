@@ -16,7 +16,10 @@ int main()
 	for (int i = 0; i < 2; ++i)
 	{
 		spoofDisk();
-		spoofGPU();
+		spoofGPU();		
+		
+
+
 		//spoofBIOS();
 		//spoofRAM();
 	}
