@@ -10,7 +10,7 @@ void	spoof()
 	spoofGPU();
 	spoofSMBIOS();
 
-
+	disk.join();
 }
 
 
@@ -25,7 +25,7 @@ int main()
 
 	for (int i = 0; i < 2; ++i)
 	{
-
+		spoof();
 	}
 
 	cin.get();
