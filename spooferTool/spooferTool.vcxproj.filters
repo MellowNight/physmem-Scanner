@@ -35,5 +35,8 @@
     <ClInclude Include="smbios.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="MAC.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

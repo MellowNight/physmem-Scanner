@@ -4,9 +4,6 @@
 
 
 
-
-
-
 void	spoofSMBIOS()
 {
 	INPUT_STRUCT	input;
