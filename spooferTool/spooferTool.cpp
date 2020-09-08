@@ -3,6 +3,16 @@
 #include "smbios.h"
 
 
+void	spoof()
+{
+	thread	disk(spoofDisk);
+
+	spoofGPU();
+	spoofSMBIOS();
+
+
+}
+
 
 int main()
 {
@@ -15,13 +25,7 @@ int main()
 
 	for (int i = 0; i < 2; ++i)
 	{
-		spoofDisk();
-		spoofGPU();		
-		
 
-
-		//spoofBIOS();
-		//spoofRAM();
 	}
 
 	cin.get();

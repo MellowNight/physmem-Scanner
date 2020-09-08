@@ -2,6 +2,7 @@
 
 
 #define    SCAN_PHYSICAL_MEMORY  	CTL_CODE(FILE_DEVICE_UNKNOWN, 0X801, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#define    SPOOF_SMBIOS           	CTL_CODE(FILE_DEVICE_UNKNOWN, 0X802, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 
 
@@ -62,19 +63,6 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
     INPUT_STRUCT*           systemBuffer = (INPUT_STRUCT*)Irp->AssociatedIrp.SystemBuffer;
 
 
-    if (systemBuffer->wide == true)
-    {
-        DbgPrint("wide char: our pattern is %wZ \n", systemBuffer->serialNumber);
-    }
-    else
-    {
-        DbgPrint("normal: our pattern is %s \n", systemBuffer->serialNumber);
-    }
-
-    DbgPrint("our pattern length is %i \n", systemBuffer->serialLength);
-
-
-    memcpy(Globals::spoofString, systemBuffer->spoofString, systemBuffer->serialLength);
 
 
 
@@ -82,10 +70,38 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
     {
     case    SCAN_PHYSICAL_MEMORY:
     {
+        if (systemBuffer->wide == true)
+        {
+            DbgPrint("wide char: our pattern is %wZ \n", systemBuffer->serialNumber);
+        }
+        else
+        {
+            DbgPrint("normal: our pattern is %s \n", systemBuffer->serialNumber);
+        }
+
+        DbgPrint("our pattern length is %i \n", systemBuffer->serialLength);
+
+
+        memcpy(Globals::spoofString, systemBuffer->spoofString, systemBuffer->serialLength);
 
         Memory::scanPhysicalMemory(systemBuffer);
 
         break;
+    }
+    case    SPOOF_SMBIOS:
+    {
+        ULONG       ntosSize;
+        PVOID64     ntosBase = Utils::getDriverBaseAddress(&ntosSize, "ntoskrnl.exe");
+
+        PPHYSICAL_ADDRESS WmipSMBiosTablePhysicalAddress = (PPHYSICAL_ADDRESS)Utils::findPattern((BYTE*)"\x48\x8B\x0D\x00\x00\x00\x00\x48\x85\xC9\x74\x00\x8B\x15", 
+            14, (BYTE)"\x00", (ULONG64)ntosBase, ((ULONG64)ntosBase + ntosSize));
+
+        if (WmipSMBiosTablePhysicalAddress)
+        {
+            WmipSMBiosTablePhysicalAddress = (PPHYSICAL_ADDRESS)Utils::ResolveRelativeAddress(WmipSMBiosTablePhysicalAddress, 3, 7);    
+
+            RtlZeroMemory(WmipSMBiosTablePhysicalAddress, sizeof(PHYSICAL_ADDRESS));
+        }
     }
     default:
         break;

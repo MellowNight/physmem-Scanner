@@ -11,7 +11,7 @@
 #include	<functional> 
 #include	<cctype>
 #include	<locale>
-
+#include    <thread>
 
 
 #define    SCAN_PHYSICAL_MEMORY  	CTL_CODE(FILE_DEVICE_UNKNOWN, 0X801, METHOD_BUFFERED, FILE_ANY_ACCESS)

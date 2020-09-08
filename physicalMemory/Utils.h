@@ -36,6 +36,82 @@ struct INPUT_STRUCT
 
 namespace Utils
 {
+    PVOID getDriverBaseAddress(OUT PULONG pSize, const char* driverName)
+    {
+        NTSTATUS Status = STATUS_SUCCESS;
+        ULONG Bytes = 0;
+        PRTL_PROCESS_MODULES arrayOfModules;
+
+
+        PVOID			DriverBase = 0;
+        ULONG64			DriverSize = 0;
+
+
+        //get size of system module information
+        Status = ZwQuerySystemInformation(SystemModuleInformation, 0, Bytes, &Bytes);
+        if (Bytes == 0)
+        {
+            DbgPrint("%s: Invalid SystemModuleInformation size\n");
+            return NULL;
+        }
+
+
+        arrayOfModules = (PRTL_PROCESS_MODULES)ExAllocatePoolWithTag(NonPagedPool, Bytes, 0x45454545); //array of loaded kernel modules
+        RtlZeroMemory(arrayOfModules, Bytes); //clean memory
+
+
+        Status = ZwQuerySystemInformation(SystemModuleInformation, arrayOfModules, Bytes, &Bytes);
+
+        if (NT_SUCCESS(Status))
+        {
+            PRTL_PROCESS_MODULE_INFORMATION pMod = arrayOfModules->Modules;
+            for (int i = 0; i < arrayOfModules->NumberOfModules; ++i)
+            {
+                //list the module names:
+
+                DbgPrint("Image name: %s\n", pMod[i].FullPathName + pMod[i].OffsetToFileName);
+                // path name plus some amount of characters will lead to the name itself
+                const char* DriverName = (const char*)pMod[i].FullPathName + pMod[i].OffsetToFileName;
+
+                if (strcmp(DriverName, driverName) == 0)
+                {
+                    DbgPrint("found driver\n");
+
+
+                    DriverBase = pMod[i].ImageBase;
+                    DriverSize = pMod[i].ImageSize;
+
+                    DbgPrint("kernel module Size : %i\n", DriverSize);
+                    DbgPrint("kernel module Base : %p\n", DriverBase);
+
+
+                    if (arrayOfModules)
+                        ExFreePoolWithTag(arrayOfModules, 0x45454545); // 'ENON'
+
+
+                    if (pSize != NULL)
+                    {
+                        *pSize = DriverSize;
+                    }
+
+                    return DriverBase;
+                }
+            }
+        }
+        if (arrayOfModules)
+            ExFreePoolWithTag(arrayOfModules, 0x45454545); // 'ENON'
+
+
+        if (pSize != NULL)
+        {
+            *pSize = DriverSize;
+        }
+        return (PVOID)DriverBase;
+    }
+
+
+
+
     HANDLE    GetProcessPID(PCWSTR     processName) 
     {
 
@@ -133,6 +209,14 @@ namespace Utils
     }
 
 
+    PVOID ResolveRelativeAddress(_In_ PVOID Instruction, _In_ ULONG OffsetOffset, _In_ ULONG InstructionSize)
+    {
+        ULONG_PTR Instr = (ULONG_PTR)Instruction;
+        LONG RipOffset = *(PLONG)(Instr + OffsetOffset);
+        PVOID ResolvedAddr = (PVOID)(Instr + InstructionSize + RipOffset);
+
+        return ResolvedAddr;
+    }
 
 
 }
