@@ -12,8 +12,7 @@
 almost done 70%
 
 ## current issue:
-
-sometimes it doesn't successfully spoof everything
+none
 
 
 ## NOTE:
