@@ -9,6 +9,8 @@
 4. driver scans physical memory for serial numbers
 5. spoof one by one in memory
 
+almost done 70%
+
 ## current issue:
 
 sometimes it doesn't successfully spoof everything
