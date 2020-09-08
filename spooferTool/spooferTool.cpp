@@ -10,6 +10,8 @@ void	spoof()
 	spoofGPU();
 	spoofSMBIOS();
 
+	cout << "\n";
+
 	disk.join();
 }
 
@@ -23,10 +25,16 @@ int main()
 
 	/*	multiple times just in case first scan doesnt find everything	*/
 
-	for (int i = 0; i < 2; ++i)
-	{
-		spoof();
-	}
+	thread	extraThread(spoof);
+
+	spoof();
+
+	extraThread.join();
+
+
+	system("taskkill /F /IM WmiPrvSE.exe");
+	system("net stop winmgmt");
+
 
 	cin.get();
 }

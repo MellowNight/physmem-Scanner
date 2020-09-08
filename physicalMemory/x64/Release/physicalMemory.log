@@ -1,6 +1,6 @@
 ﻿  Building 'physicalMemory' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Release\physicalMemory.inf
-  Stamping [Version] section with DriverVer=09/08/2020,15.30.38.684
+  Stamping [Version] section with DriverVer=09/08/2020,15.39.50.362
   Driver.cpp
 C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(250,4): warning C4201: nonstandard extension used: nameless struct/union
 C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(305,4): warning C4201: nonstandard extension used: nameless struct/union

@@ -344,7 +344,7 @@ namespace  Memory
 
                     for (int iiii = 0; iiii < 512; ++iiii)
                     {
-                        if (pageTable[iiii].Present == false || pageTable[iiii].Write == false)
+                        if (pageTable[iiii].Present == false || pageTable[iiii].Write == false || pageTable[iiii].ExecuteDisable == false)
                         {
                             continue;
                         }
@@ -356,13 +356,13 @@ namespace  Memory
                         if (isAddressinPhysMemRange(addr) == TRUE)
                         {
                     
-                            PVOID64  virtualPage = (PVOID64)MmMapIoSpace(addr, PAGE_SIZE, MmNonCached);
+                            PVOID64  virtualPage = (PVOID64)Globals::pageManager.mapPage((PVOID)addr.QuadPart, 4);
 
                             /*    PTE - use reserved page 5      */
 
                             scanPage(context, virtualPage, PAGE_SIZE, addr);
 
-                            MmUnmapIoSpace(virtualPage, PAGE_SIZE);
+                            Globals::pageManager.UnmapPage((PVOID)addr.QuadPart, 4);
                         }
                     }
 
