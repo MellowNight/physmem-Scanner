@@ -1,20 +1,5 @@
-# hwid spoofer/physical memory tool
- scans through memory and places some hooks around to spoof hwids. physicalMemory is kernel mode driver, spooferTool is usermode.
- 
- ## how it works:
- 
-1. sends commands through CMD to retrieve serial number and place in text file
-2. reads from text file
-3. sends content to driver
-4. driver scans physical memory for serial numbers
-5. spoof one by one in memory
+# physical memory scanning tool
 
-almost done 70%
+scans kernel physical memory for strings and replaces one by one.
 
-## current issue:
-none
-
-
-## NOTE:
-- for s.m.a.r.t serials you NEED to place hooks
-- for GPU uuid you MAY need to place hooks
+I use it to spoof disk serials and MAC serials as a POC
