@@ -5,8 +5,7 @@
 namespace Memory
 {
     PT_ENTRY_64*    GetPte(VOID* VirtualAddress, CR3 HostCr3);
-
-
+    void            getPhysicalMemoryRanges();
 }
 
 
@@ -43,6 +42,8 @@ public:
 
             reservedPages[i].reservedPagePTE = (PTE_64*)Memory::GetPte(reservedPages[i].reservedPage, cr3);
         }
+
+        Memory::getPhysicalMemoryRanges();
     }
 
 

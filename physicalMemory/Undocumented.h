@@ -7,6 +7,17 @@
 #include    "ia32.h"
 
 
+#define MM_UNLOADED_DRIVERS_SIZE 50
+#define IMAGE_SCN_CNT_INITIALIZED_DATA 0x00000040
+#define IMAGE_SCN_CNT_UNINITIALIZED_DATA 0x00000080
+#define IMAGE_SCN_CNT_CODE 0x00000020
+#define IMAGE_SCN_MEM_EXECUTE 0x20000000
+#define IMAGE_SCN_MEM_DISCARDABLE 0x02000000
+#define IMAGE_NT_SIGNATURE 0x00004550
+#define IMAGE_DOS_SIGNATURE 0x5A4D // MZ
+#define STANDARD_RIGHTS_ALL 0x001F0000L
+#define IMAGE_NUMBEROF_DIRECTORY_ENTRIES        16
+
 
 
 
@@ -98,6 +109,11 @@ typedef enum _SYSTEM_INFORMATION_CLASS
 
 } SYSTEM_INFORMATION_CLASS;
 
+typedef struct _IMAGE_DATA_DIRECTORY
+{
+    ULONG VirtualAddress;
+    ULONG Size;
+} IMAGE_DATA_DIRECTORY, * PIMAGE_DATA_DIRECTORY;
 
 
 typedef struct _SYSTEM_THREADS
@@ -159,6 +175,77 @@ typedef struct _RTL_PROCESS_MODULES
 } RTL_PROCESS_MODULES, * PRTL_PROCESS_MODULES;
 
 
+
+typedef struct _IMAGE_SECTION_HEADER {
+    BYTE  Name[8];
+    union {
+        DWORD PhysicalAddress;
+        DWORD VirtualSize;
+    } Misc;
+    DWORD VirtualAddress;
+    DWORD SizeOfRawData;
+    DWORD PointerToRawData;
+    DWORD PointerToRelocations;
+    DWORD PointerToLinenumbers;
+    WORD  NumberOfRelocations;
+    WORD  NumberOfLinenumbers;
+    DWORD Characteristics;
+} IMAGE_SECTION_HEADER, * PIMAGE_SECTION_HEADER;
+
+
+typedef struct _IMAGE_FILE_HEADER // Size=20
+{
+    USHORT Machine;
+    USHORT NumberOfSections;
+    ULONG TimeDateStamp;
+    ULONG PointerToSymbolTable;
+    ULONG NumberOfSymbols;
+    USHORT SizeOfOptionalHeader;
+    USHORT Characteristics;
+} IMAGE_FILE_HEADER, * PIMAGE_FILE_HEADER;
+
+typedef struct _IMAGE_OPTIONAL_HEADER64
+{
+    USHORT Magic;
+    UCHAR MajorLinkerVersion;
+    UCHAR MinorLinkerVersion;
+    ULONG SizeOfCode;
+    ULONG SizeOfInitializedData;
+    ULONG SizeOfUninitializedData;
+    ULONG AddressOfEntryPoint;
+    ULONG BaseOfCode;
+    ULONGLONG ImageBase;
+    ULONG SectionAlignment;
+    ULONG FileAlignment;
+    USHORT MajorOperatingSystemVersion;
+    USHORT MinorOperatingSystemVersion;
+    USHORT MajorImageVersion;
+    USHORT MinorImageVersion;
+    USHORT MajorSubsystemVersion;
+    USHORT MinorSubsystemVersion;
+    ULONG Win32VersionValue;
+    ULONG SizeOfImage;
+    ULONG SizeOfHeaders;
+    ULONG CheckSum;
+    USHORT Subsystem;
+    USHORT DllCharacteristics;
+    ULONGLONG SizeOfStackReserve;
+    ULONGLONG SizeOfStackCommit;
+    ULONGLONG SizeOfHeapReserve;
+    ULONGLONG SizeOfHeapCommit;
+    ULONG LoaderFlags;
+    ULONG NumberOfRvaAndSizes;
+    struct _IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];
+} IMAGE_OPTIONAL_HEADER64, * PIMAGE_OPTIONAL_HEADER64;
+
+
+typedef struct _IMAGE_NT_HEADERS64 {
+    DWORD                   Signature;
+    IMAGE_FILE_HEADER       FileHeader;
+    IMAGE_OPTIONAL_HEADER64 OptionalHeader;
+} IMAGE_NT_HEADERS64, * PIMAGE_NT_HEADERS64;
+
+
 extern "C"
 {
 
@@ -189,7 +276,7 @@ extern "C"
         PDRIVER_INITIALIZE InitializationFunction
     );
 
-
+    NTSYSAPI PIMAGE_NT_HEADERS NTAPI RtlImageNtHeader(IN PVOID   ModuleAddress);
 
 }
 

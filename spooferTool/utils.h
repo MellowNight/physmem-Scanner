@@ -2,6 +2,8 @@
 #include "globals.h"
 
 
+/*  global util functions   */
+
 namespace Utils
 {
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "utils.h"
 
-
+/*	spoof smbios physical address	*/
 
 
 void	spoofSMBIOS()

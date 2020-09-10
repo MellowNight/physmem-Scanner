@@ -1,7 +1,7 @@
 #pragma once
 #include "utils.h"
 
-
+/*	spoof disk serials, scan for all different encodings	(doesnt work for s.m.a.r.t)	*/
 
 string randomDisk(int length)
 {
@@ -177,6 +177,11 @@ void	spoofDisk()
 		if (status == FALSE)
 		{
 			cout << "[+] there was an error!  getlasterror " << GetLastError() << endl;
+
+			if (GetLastError() == 6)
+			{
+				cout << "you need to run as admin! " << endl;
+			}
 		}
 	}
 

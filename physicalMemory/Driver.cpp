@@ -6,13 +6,7 @@
 
 
 
-
-
 UNICODE_STRING      symLink;
-
-
-
-
 
 
 
@@ -90,17 +84,22 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
     }
     case    SPOOF_SMBIOS:
     {
-        ULONG       ntosSize;
-        PVOID64     ntosBase = Utils::getDriverBaseAddress(&ntosSize, "ntoskrnl.exe");
+        PPHYSICAL_ADDRESS WmipSMBiosTablePhysicalAddress;
 
-        PPHYSICAL_ADDRESS WmipSMBiosTablePhysicalAddress = (PPHYSICAL_ADDRESS)Utils::findPattern((BYTE*)"\x48\x8B\x0D\x00\x00\x00\x00\x48\x85\xC9\x74\x00\x8B\x15", 
-            14, (BYTE)"\x00", (ULONG64)ntosBase, ((ULONG64)ntosBase + ntosSize));
+  
+        NTSTATUS status = Utils::safeScan("PAGE", (PCUCHAR)"\x48\x8B\x0D\x00\x00\x00\x00\x48\x85\xC9\x74\x00\x8B\x15",
+            (UCHAR)"\x00", 14, (PVOID*)&WmipSMBiosTablePhysicalAddress);
 
-        if (WmipSMBiosTablePhysicalAddress)
+
+        if (WmipSMBiosTablePhysicalAddress != 0)
         {
+            DbgPrint("wmipSmbiosTablePhysicalAddress %p \n", WmipSMBiosTablePhysicalAddress);
+
             WmipSMBiosTablePhysicalAddress = (PPHYSICAL_ADDRESS)Utils::ResolveRelativeAddress(WmipSMBiosTablePhysicalAddress, 3, 7);    
 
-            RtlZeroMemory(WmipSMBiosTablePhysicalAddress, sizeof(PHYSICAL_ADDRESS));
+            DbgPrint("wmipSmBiosTablePhysicalAddress %p \n", WmipSMBiosTablePhysicalAddress);
+
+            WmipSMBiosTablePhysicalAddress->QuadPart = Memory::physicalMemRange[0].BaseAddress.QuadPart;
         }
     }
     default:
@@ -108,7 +107,7 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
     }
 
 
-
+     
     Irp->IoStatus.Status = STATUS_SUCCESS;
     IoCompleteRequest(Irp, IO_NO_INCREMENT);
 
@@ -161,8 +160,8 @@ NTSTATUS    Entry(_In_ _DRIVER_OBJECT * DriverObject, _In_ PUNICODE_STRING Regis
 
 
     RtlInitUnicodeString(&symLink, L"\\DosDevices\\xPhymAqg");
-
     IoCreateSymbolicLink(&symLink, &deviceName);
+
 
 
     for (int i = 0; i < IRP_MJ_MAXIMUM_FUNCTION; ++i)
@@ -172,13 +171,12 @@ NTSTATUS    Entry(_In_ _DRIVER_OBJECT * DriverObject, _In_ PUNICODE_STRING Regis
 
 
     DriverObject->MajorFunction[IRP_MJ_DEVICE_CONTROL] = IOCTLdispatch;
-
     DriverObject->MajorFunction[IRP_MJ_CREATE] = CreateHandler;
-
     DriverObject->MajorFunction[IRP_MJ_CLOSE] = CloseHandler;
 
 
     DriverObject->DriverUnload = (PDRIVER_UNLOAD)&driverUnload;
+
 
     if (deviceObject)
     {

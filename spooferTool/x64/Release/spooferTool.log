@@ -1,9 +1,1 @@
-﻿  spooferTool.cpp
-C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\disk.h(15,8): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\disk.h(101,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\disk.h(157,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 420 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  spooferTool.vcxproj -> C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\x64\Release\spooferTool.exe
+﻿

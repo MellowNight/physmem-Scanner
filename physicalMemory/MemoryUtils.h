@@ -16,9 +16,8 @@ enum mapLevel
 
 namespace  Memory
 {
-    int       myInt = 999999;
-    int       myInt2 = 1312312;
-    SIZE_T    outSize;
+    int                     myInt = 1312312;
+    SIZE_T                  outSize;
     PHYSICAL_MEMORY_RANGE   physicalMemRange[10];
     static  int             numberOfRuns = 0;
 

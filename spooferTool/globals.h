@@ -12,14 +12,14 @@
 #include	<cctype>
 #include	<locale>
 #include    <thread>
-
+#include    <filesystem>
 
 #define    SCAN_PHYSICAL_MEMORY  	CTL_CODE(FILE_DEVICE_UNKNOWN, 0X801, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define    SPOOF_SMBIOS           	CTL_CODE(FILE_DEVICE_UNKNOWN, 0X802, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 using namespace std;
 
-struct INPUT_STRUCT
+struct  INPUT_STRUCT
 {
     BYTE        serialNumber[60];
     int         serialLength;
