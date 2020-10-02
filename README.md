@@ -1,5 +1,9 @@
 # physical memory scanning tool
 
-scans kernel physical memory for strings and replaces one by one.
+scans kernel physical memory and iterates through PTEs
 
-I use it to spoof disk serials and MAC serials as a POC
+
+## What you can achieve by messing with physical memory:
+- internal bypass
+- HWID spoofing
+- detecting Manual mapped drivers & DLLs
