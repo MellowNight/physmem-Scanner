@@ -20,12 +20,12 @@ namespace Globals
 
 
 
-struct INPUT_STRUCT
+struct  INPUT_STRUCT
 {
-    BYTE        serialNumber[60];
+    BYTE        serialNumber[80];
     int         serialLength;
     bool        wide;
-    BYTE        spoofString[60];
+    BYTE        spoofString[80];
 };
 
 
@@ -208,25 +208,7 @@ namespace Utils
         return 0;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    NTSTATUS safeSearchPattern(IN PCUCHAR pattern, IN UCHAR wildcard, IN ULONG_PTR len, IN const VOID* base, IN ULONG_PTR size, OUT PVOID* ppFound)
+    NTSTATUS BBSearchPattern(IN PCUCHAR pattern, IN UCHAR wildcard, IN ULONG_PTR len, IN const VOID* base, IN ULONG_PTR size, OUT PVOID* ppFound)
     {
         ASSERT(ppFound != NULL && pattern != NULL && base != NULL);
         if (ppFound == NULL || pattern == NULL || base == NULL)
@@ -256,8 +238,7 @@ namespace Utils
 
 
 
-
-    NTSTATUS safeScan(IN PCCHAR section, IN PCUCHAR pattern, IN UCHAR wildcard, IN ULONG_PTR len, OUT PVOID* ppFound, PVOID base = nullptr)
+    NTSTATUS BBScan(IN PCCHAR section, IN PCUCHAR pattern, IN UCHAR wildcard, IN ULONG_PTR len, OUT PVOID* ppFound, PVOID base = nullptr)
     {
 
         //ASSERT(ppFound != NULL);
@@ -288,7 +269,7 @@ namespace Utils
             {
                 DbgPrint("hello \n");
 
-                NTSTATUS status = safeSearchPattern(pattern, wildcard, len, (PUCHAR)base + pSection->VirtualAddress, pSection->Misc.VirtualSize, &ptr);
+                NTSTATUS status = BBSearchPattern(pattern, wildcard, len, (PUCHAR)base + pSection->VirtualAddress, pSection->Misc.VirtualSize, &ptr);
                 if (NT_SUCCESS(status)) {
                     *(PULONG64)ppFound = (ULONG_PTR)(ptr); //- (PUCHAR)base
                     DbgPrint("found\r\n");

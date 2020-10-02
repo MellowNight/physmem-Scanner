@@ -13,15 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\registry">
+      <UniqueIdentifier>{1efa0bbe-10b3-40c4-86bc-710144473a72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\globals">
+      <UniqueIdentifier>{cfefe371-237b-41f0-8d49-1d0a8e74f6d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="disk.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="globals.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="gpu.h">
@@ -31,6 +31,21 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="MAC.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegUtils.h">
+      <Filter>Source Files\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="registry.h">
+      <Filter>Source Files\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>Source Files\globals</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Source Files\globals</Filter>
+    </ClInclude>
+    <ClInclude Include="volumes.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

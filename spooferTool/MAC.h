@@ -18,13 +18,6 @@
 
 
 
-
-
-
-
-
-
-
 struct NIC_INFO
 {
     int         macLength;
@@ -33,28 +26,6 @@ struct NIC_INFO
 };
 
 
-string randomMac(int length)
-{
-    Sleep(1000);
-
-
-    time_t seconds;
-
-    seconds = time(NULL);
-
-    srand(seconds);
-
-    string    String;
-
-    for (int i = 0; i < length; ++i)
-    {
-        int seed = rand();
-
-        String += (DiskChars[seed % (sizeof(DiskChars) - 1)]);
-    }
-
-    return String;
-}
 
 
 
@@ -172,7 +143,7 @@ int   spoofMac()
 
         input.serialLength = nicInfoArray[i].macLength;
         input.wide = false;
-        RtlCopyMemory(input.spoofString, randomMac(6).c_str(), 6);
+        RtlCopyMemory(input.spoofString, Utils::randomMac(6).c_str(), 6);
         RtlCopyMemory(input.serialNumber, nicInfoArray[i].mac, 8);
 
         

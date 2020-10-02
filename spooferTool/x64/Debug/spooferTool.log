@@ -1,6 +1,12 @@
-﻿  spooferTool.cpp
-C:\Users\jguo5\source\repos\physicalMemory\spooferTool\disk.h(93,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jguo5\source\repos\physicalMemory\spooferTool\disk.h(149,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jguo5\source\repos\physicalMemory\spooferTool\smbios.h(127,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jguo5\source\repos\physicalMemory\spooferTool\smbios.h(166,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  spooferTool.vcxproj -> C:\Users\jguo5\source\repos\physicalMemory\x64\Debug\spooferTool.exe
+﻿  main.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\disk.h(14,8): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\disk.h(100,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\disk.h(155,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\MAC.h(38,11): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\MAC.h(79,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\volumes.h(39,57): warning C4042: 'outbuf': has bad storage class
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\volumes.h(59,28): warning C4302: 'type cast': truncation from 'const char *' to 'char'
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\volumes.h(132,45): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\spooferTool\registry.h(359): warning C4715: 'spoofRegistry': not all control paths return a value
+  spooferTool.vcxproj -> C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\x64\Debug\spooferTool.exe

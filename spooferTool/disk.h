@@ -7,7 +7,6 @@ string randomDisk(int length)
 {
 	Sleep(1000);
 
-
 	time_t seconds;
 
 	seconds = time(NULL);
@@ -113,7 +112,6 @@ void	spoofDisk()
 		strcpy((char*)input.serialNumber, serialNumbers[i].c_str());
 
 		input.serialLength = length;
-
 		input.wide = false;
 
 		RtlCopyMemory(input.spoofString, spoofString.c_str(), length);

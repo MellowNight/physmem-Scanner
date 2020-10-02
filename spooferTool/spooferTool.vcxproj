@@ -146,8 +146,11 @@
     <ClInclude Include="globals.h" />
     <ClInclude Include="gpu.h" />
     <ClInclude Include="MAC.h" />
+    <ClInclude Include="registry.h" />
+    <ClInclude Include="RegUtils.h" />
     <ClInclude Include="smbios.h" />
     <ClInclude Include="utils.h" />
+    <ClInclude Include="volumes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

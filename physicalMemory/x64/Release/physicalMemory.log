@@ -1,1 +1,309 @@
-﻿
+﻿  Building 'physicalMemory' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Release\physicalMemory.inf
+  Stamping [Version] section with DriverVer=09/13/2020,21.16.39.814
+  Driver.cpp
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(250,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(305,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(609,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(641,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(747,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(938,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(1063,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(1119,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(1473,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(1834,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(1934,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(1975,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(1994,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2039,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2070,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2088,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2115,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2195,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2381,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2399,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2430,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2447,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2479,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2767,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2850,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2867,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2895,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2912,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2929,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(2946,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3006,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3078,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3095,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3132,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3173,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3196,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3230,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3247,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3355,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3373,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3391,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3408,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3453,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3470,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3516,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3533,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3564,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3583,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3613,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3630,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3675,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3692,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3709,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3729,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3755,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3772,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3789,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3825,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3870,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3908,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3925,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3942,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3969,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(3986,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4006,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4024,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4051,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4068,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4085,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4103,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4130,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4147,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4167,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4185,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4255,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4272,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4289,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4316,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4342,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4359,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4376,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4393,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4421,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4438,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4455,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4472,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4510,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4528,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4558,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4576,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4617,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4683,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4739,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4756,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4790,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4816,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4833,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4850,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4888,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4905,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4922,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4939,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4976,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(4994,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5012,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5029,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5065,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5093,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5110,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5127,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5155,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5172,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5189,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5206,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5232,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5249,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5266,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5283,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5326,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5390,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5407,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5464,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5494,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5558,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5575,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5632,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5665,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5682,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5699,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5716,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5742,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5759,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5797,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5856,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5892,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5909,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5926,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5943,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5967,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(5984,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6001,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6018,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6042,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6059,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6076,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6093,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6117,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6134,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6151,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6168,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6194,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6211,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6255,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6272,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6298,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6315,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6332,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6352,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6454,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6511,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6643,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6713,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6795,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(6965,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7015,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7145,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7203,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7334,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7364,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7404,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7458,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7589,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7819,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(7997,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8025,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8162,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8265,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8417,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8456,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8494,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8590,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8630,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8700,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8887,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(8957,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(9005,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(9102,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(9239,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(9416,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(9560,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(9667,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(9712,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(9758,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(10059,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(10149,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(10437,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(10589,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(10736,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(10900,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(10991,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(11304,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(11497,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(11547,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(11580,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(11624,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(11677,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(11717,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(11786,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12158,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12298,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12329,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12401,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12453,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12517,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12593,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12633,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12721,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(12762,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13023,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13050,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13077,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13117,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13163,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13204,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13247,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13274,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13304,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13334,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13414,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13492,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13662,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13775,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13903,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(13978,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(14137,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(14309,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(14436,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(14608,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(14735,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(14896,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(14991,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(15197,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(15405,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(15607,6): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(15884,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(16653,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(16688,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(16775,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(16824,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(16902,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(16962,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17118,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17177,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17283,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17408,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17538,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17576,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17673,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17799,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17910,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(17989,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18098,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18197,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18286,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18417,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18494,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18625,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18702,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18825,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(18894,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(19056,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(19114,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(19198,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(20328,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(20388,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(20893,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(21110,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(21331,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\ia32.h(21429,4): warning C4201: nonstandard extension used: nameless struct/union
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Undocumented.h(18,1): warning C4005: 'STANDARD_RIGHTS_ALL': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\km\wdm.h(5230): message : see previous definition of 'STANDARD_RIGHTS_ALL'
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\pageManager.h(84,32): warning C4100: 'physicalAddr': unreferenced formal parameter
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Utils.h(68,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Utils.h(94,34): warning C4244: '=': conversion from 'ULONG64' to 'ULONG', possible loss of data
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Utils.h(107,22): warning C4244: '=': conversion from 'ULONG64' to 'ULONG', possible loss of data
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\MemoryUtils.h(29,16): warning C4101: 'level': unreferenced local variable
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Driver.cpp(53,46): warning C4100: 'DeviceObject': unreferenced formal parameter
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Driver.cpp(90,18): warning C4189: 'status': local variable is initialized but not referenced
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Driver.cpp(142,76): warning C4100: 'RegistryPath': unreferenced formal parameter
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Driver.cpp(199,65): warning C4100: 'registry_path': unreferenced formal parameter
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Driver.cpp(199,37): warning C4100: 'driver_obj': unreferenced formal parameter
+C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\physicalMemory\Utils.h(160): warning C4715: 'Utils::GetProcessPID': not all control paths return a value
+  physicalMemory.vcxproj -> C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\x64\Release\physicalMemory.sys
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\jguo5\OneDrive\Documents\GitHub\hwid-spoofer\x64\Release\physicalMemory\physicalmemory.cat

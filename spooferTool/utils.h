@@ -53,4 +53,30 @@ namespace Utils
             std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
         return s;
     }
+
+
+
+
+    string randomMac(int length)
+    {
+        Sleep(1000);
+
+
+        time_t seconds;
+
+        seconds = time(NULL);
+
+        srand(seconds);
+
+        string    String;
+
+        for (int i = 0; i < length; ++i)
+        {
+            int seed = rand();
+
+            String += (DiskChars[seed % (sizeof(DiskChars) - 1)]);
+        }
+
+        return String;
+    }
 }

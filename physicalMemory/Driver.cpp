@@ -66,11 +66,11 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
     {
         if (systemBuffer->wide == true)
         {
-            DbgPrint("wide char: our pattern is %wZ \n", systemBuffer->serialNumber);
+            Utils::wprint((wchar_t*)systemBuffer->serialNumber, (systemBuffer->serialLength / 2));
         }
         else
         {
-            DbgPrint("normal: our pattern is %s \n", systemBuffer->serialNumber);
+            Utils::print((char*)systemBuffer->serialNumber, systemBuffer->serialLength);
         }
 
         DbgPrint("our pattern length is %i \n", systemBuffer->serialLength);
@@ -87,8 +87,8 @@ NTSTATUS        IOCTLdispatch(DEVICE_OBJECT* DeviceObject, PIRP	    Irp)
         PPHYSICAL_ADDRESS WmipSMBiosTablePhysicalAddress;
 
   
-        NTSTATUS status = Utils::safeScan("PAGE", (PCUCHAR)"\x48\x8B\x0D\x00\x00\x00\x00\x48\x85\xC9\x74\x00\x8B\x15",
-            (UCHAR)"\x00", 14, (PVOID*)&WmipSMBiosTablePhysicalAddress);
+        NTSTATUS status = Utils::BBScan("PAGE", (PCUCHAR)"\x48\x8B\x0D\x00\x00\x00\x00\x48\x85\xC9\x74\x00\x8B\x15",
+            (UCHAR)'\x00', 14, (PVOID*)&WmipSMBiosTablePhysicalAddress);
 
 
         if (WmipSMBiosTablePhysicalAddress != 0)
